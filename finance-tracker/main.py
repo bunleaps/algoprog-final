@@ -6,11 +6,11 @@ from prettytable import PrettyTable
 class FinanceTracker:
     def __init__(self, database):
         self.database = database
-        self.menu_txt = "./assets/menu.txt"
+        self.menu_path = "./assets/"
         self.clear_console = lambda: os.system("cls" if os.name == "nt" else "clear")
 
-    def menu(self):
-        menu_instructions = open(self.menu_txt, "r")
+    def menu(self, indexMenu):
+        menu_instructions = open(f"{self.menu_path}{indexMenu}.txt", "r")
         for i in menu_instructions.readlines():
             print(i, end="")
         menu_instructions.close()
@@ -53,6 +53,12 @@ class FinanceTracker:
                     for transaction in self.read_database()
                     if transaction["expense"] == True
                 ]
+            elif filter == "i":
+                transactions = [
+                    transaction
+                    for transaction in self.read_database()
+                    if transaction["expense"] == False
+                ]
 
             self.printTable(transactions)
 
@@ -63,16 +69,25 @@ class FinanceTracker:
     def run(self):
         while True:
             self.clear_console()
-            self.menu()
+            self.menu("menu")
 
             user_input = input("\n? Enter option: ")
 
             if user_input == "0":
                 break
             elif user_input == "1":
-                self.read_transactions("a")
-            elif user_input == "2":
-                self.read_transactions("e")
+                while True:
+                    self.clear_console()
+                    self.menu("transactions")
+                    user_input = input("\n? Enter option: ")
+                    if user_input == "0":
+                        break
+                    elif user_input == "1":
+                        self.read_transactions("a")
+                    elif user_input == "2":
+                        self.read_transactions("e")
+                    elif user_input == "3":
+                        self.read_transactions("i")
 
 
 if __name__ == "__main__":

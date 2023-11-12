@@ -1,0 +1,7 @@
+Select Transactions to View
+---------------------------------
+1 - display all transactions
+2 - display all expenses
+3 - display all incomes
+0 - go back
+---------------------------------

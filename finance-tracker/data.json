@@ -1,0 +1,28 @@
+{
+  "transactions": [
+    {
+      "id": 123123,
+      "date": "8/1/2023",
+      "account": "Transportation Expense",
+      "amount": 213.0,
+      "notes": "Flights Tickets to Indonesia",
+      "expense": true
+    },
+    {
+      "id": 112113,
+      "date": "7/31/2023",
+      "account": "Entertainment Expense",
+      "amount": 150.0,
+      "notes": "Canon EOS M10",
+      "expense": true
+    },
+    {
+      "id": 145145,
+      "date": "7/31/2023",
+      "account": "Work Revenue",
+      "amount": 800.0,
+      "notes": "Car Dealership CCaaS System",
+      "expense": false
+    }
+  ]
+}

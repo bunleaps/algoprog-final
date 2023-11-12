@@ -1,0 +1,8 @@
+=================================
+****     Finance Tracker     ****
+=================================
+1 - display all transactions
+2 - display all expenses
+3 - display all incomes
+0 - quit the program
+---------------------------------

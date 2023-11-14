@@ -2,5 +2,6 @@
 ****     Finance Tracker     ****
 =================================
 1 - view transactions
-0 - quit the program
+2 - add transactions
+q - quit the program
 ---------------------------------
